@@ -13,12 +13,12 @@ There is two fashion:
 - as CLI tool; which require `$ npm install -g nil`
 - as straight module;  which require `$ npm install nil`
 
-    $ nil init -c <my-connection-string> # create schema migration table and migration folder
-    $ nil create 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># create two new migration script (`UP` and `DOWN`)
-    $ nil up -c <my-connection-string># run all `UP` migration from current to last existing one
-    $ nil up 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># run all migration `UP` to the specified one
-    $ nil down -c <my-connection-string># run all migration `DOWN` migration to first one
-    $ nil down 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># run all migration `DOWN` migration to the specifed one
+$ nil init -c <my-connection-string> # create schema migration table and migration folder
+$ nil create 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># create two new migration script (`UP` and `DOWN`)
+$ nil up -c <my-connection-string># run all `UP` migration from current to last existing one
+$ nil up 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># run all migration `UP` to the specified one
+$ nil down -c <my-connection-string># run all migration `DOWN` migration to first one
+$ nil down 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># run all migration `DOWN` migration to the specifed one
 
 or
 
