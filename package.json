@@ -1,0 +1,22 @@
+{
+  "name": "nil",
+  "version": "0.0.1",
+  "description": "NIL: Node mIgration Tool",
+  "main": "nil.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "migration",
+    "database",
+    "cli"
+  ],
+  "author": "Benjamin Dreux",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^0.9.0",
+    "lodash": "^2.4.1",
+    "pg": "^4.0.0"
+  }
+}
