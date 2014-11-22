@@ -36,9 +36,10 @@ When running a down script, the name of the script is removed from the database.
 Missing parts
 -----------------
 
-At the moment it's a simple js file. 
-* I'd like to be able to call from cli as shown in the Usage section.
+At the moment it's a simple js file.
+* when using CLI interface, i'd like to be able to _save_ connection string, in a file or environnement in order to reuse it without typing it
 * I'd like to be able to call this from grunt
+
 
 Thanks
 -----------
