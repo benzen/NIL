@@ -8,11 +8,11 @@ A simple tool to run sql migration using plain text file
 Usage
 -----
 
-    $ nil create 2014-01-01-add-seven-life-cat-etching # create two new migration script (`UP` and `DOWN`)
-    $ nil up # run all `UP` migration from current to last existing one
-    $ nil up 2014-01-01-add-seven-life-cat-etching # run all migration `UP` to the specified one
-    $ nil down # run all migration `DOWN` migration to first one
-    $ nil down 2014-01-01-add-seven-life-cat-etching # run all migration `DOWN` migration to the specifed one
+    $ nil create 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># create two new migration script (`UP` and `DOWN`)
+    $ nil up -c <my-connection-string># run all `UP` migration from current to last existing one
+    $ nil up 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># run all migration `UP` to the specified one
+    $ nil down -c <my-connection-string># run all migration `DOWN` migration to first one
+    $ nil down 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># run all migration `DOWN` migration to the specifed one
 
 
 How it works
