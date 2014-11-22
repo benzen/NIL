@@ -39,3 +39,8 @@ Missing parts
 At the moment it's a simple js file. 
 * I'd like to be able to call from cli as shown in the Usage section.
 * I'd like to be able to call this from grunt
+
+Thanks
+-----------
+
+Thanks to [@fxg42](https://github.com/fxg42) for the base idea and organization
