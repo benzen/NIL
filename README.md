@@ -8,11 +8,32 @@ A simple tool to run sql migration using plain text file
 Usage
 -----
 
+There is two fashion:
+
+- as CLI tool; which require `$ npm install -g nil`
+- as straight module;  which require `$ npm install nil`
+
     $ nil create 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># create two new migration script (`UP` and `DOWN`)
     $ nil up -c <my-connection-string># run all `UP` migration from current to last existing one
     $ nil up 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># run all migration `UP` to the specified one
     $ nil down -c <my-connection-string># run all migration `DOWN` migration to first one
     $ nil down 2014-01-01-add-seven-life-cat-etching -c <my-connection-string># run all migration `DOWN` migration to the specifed one
+
+or
+
+````Javascript
+var nil = require("nil");
+nil.init("my connection string");
+
+nil.create("my-fancy-migration");
+
+nil.up("my connection string");
+nil.up("my connection string", "1111111111111-specific-migration");
+
+nil.down("my connection string");
+nil.down("my connection string", "1111111111111-specific-migration");
+
+````
 
 
 How it works
