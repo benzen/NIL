@@ -198,9 +198,25 @@ var doInit = function(conString){
     "testTable": ["connection", testTable],
     "createTable": ["testTable", createTable]
   }, closeConnectionAndReportError );
-
 }
-
+var doCreate = function(name){
+  var now = new Date().getTime();
+  var files = [
+    {
+      name: now + name + "-up.sql",
+      template: "-- create table egypthian_cat_etching ( id serial primary key not null, name text unique not null ); "
+    },{
+      name: now + name + "-down.sql",
+      template: "-- drop table if exists egypthian_cat_etching;"
+    }
+  ];
+  async.each(files, function(file, cb){
+    console.log( "file", file.name)
+    fs.writeFile("./" + MIGRATION_FOLDER +"/"+ file.name, file.template, cb);
+  }, function(err){
+    if(err){console.error(err);}
+  });
+}
 
 program
   .version("0.0.1")
