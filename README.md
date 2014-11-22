@@ -32,3 +32,15 @@ They will have the same name but with a suffix to distinguish them, like this
 When running a script, NIL will record the name of the script that are already applied to the database.
 This way the migration scripts can only be applied once.
 When running a down script, the name of the script is removed from the database.
+
+Missing parts
+-----------------
+
+At the moment it's a simple js file. 
+* I'd like to be able to call from cli as shown in the Usage section.
+* I'd like to be able to call this from grunt
+
+Thanks
+-----------
+
+Thanks to [@fxg42](https://github.com/fxg42) for the base idea and organization
