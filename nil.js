@@ -2,6 +2,7 @@ var async = require("async");
 var _ = require("lodash");
 var fs = require('fs');
 var pg = require('pg')
+var program = require('commander');
 
 var CONNECTION_STRING = "postgres://postgres:postgres@localhost/pyramide"
 var MIGRATION_FOLDER = "migration"
@@ -157,11 +158,8 @@ var takeUntil = function(files, stopAt){
 }
 
 
-
-//TODO tree operation need to be supported: create, up, down
-//up
 var doUp = function(conString, upTo){
-  upTo = upTo || ""; //should limit the max to apply but does nothing for the moment
+  upTo = upTo || "";
   async.auto({
     "files":                    getFiles,
     "connection":               connection(conString),
@@ -178,7 +176,7 @@ var doUp = function(conString, upTo){
 };
 
 var doDown = function(conString, downTo){
-  downTo = downTo || ""; //should limit the max to apply but does nothing for the moment
+  downTo = downTo || "";
   async.auto({
     "files":                    getFiles,
     "connection":               connection(conString),
@@ -204,6 +202,30 @@ var doInit = function(conString){
 }
 
 
-doUp(CONNECTION_STRING, "1416635703604-create-migration-table");
-//doDown(CONNECTION_STRING, "head");
-//doInit(CONNECTION_STRING);
+program
+  .version("0.0.1")
+  .usage("<command> [options]")
+  .option("-c, --connection-string <connectionString>","Define a connection string")
+
+program.command("init")
+      .description("Create the schema migration table on table. It's safe to run it multiple time, old version won't be altered.")
+      .action(function(){
+        doInit(program.connectionString)
+      });
+program.command("create <name>")
+       .description("Create new up and down migration script")
+       .action(function(name){
+         doCreate(name)
+       });
+program.command("up [name]")
+       .description("Run all migration up to name provided. If no name is provided, it will run up to the last one.")
+       .action(function(name){
+         doUp(program.connectionString, name);
+       });
+program.command("down [name]")
+       .description("Run all migration down to name provided. If no name is provided, it will run down to the first one.")
+       .action(function(name){
+         doDown(program.connectionString, name);
+       });
+
+program.parse(process.argv);
