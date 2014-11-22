@@ -33,6 +33,12 @@ When running a script, NIL will record the name of the script that are already a
 This way the migration scripts can only be applied once.
 When running a down script, the name of the script is removed from the database.
 
+Be aware of
+----------------
+
+When reading the file, NIL expect to find normally formatted sql script. Meaning with semi-colon to the end of each command.
+The command can be spanned on multiple line, it won't affect the execution of the migration.
+
 Missing parts
 -----------------
 
