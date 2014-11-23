@@ -57,6 +57,26 @@ When running a script, NIL will record the name of the script that are already a
 This way the migration scripts can only be applied once.
 When running a down script, the name of the script is removed from the database.
 
+Grunt module
+-------------
+
+There is also a grunt plugin for NIL. It's included in this repository.
+At the moment, Nil is not provided as a separate npm module, all is included in this module.
+So the loading of the nil grunt task, is a little bit weird, it use a local module.
+
+````Javascript
+grunt.initConfig({
+  "nil":{
+    "options":{
+      "connectionString":"postgres://postgres:postgres@localhost/pyramide",
+      "migrationFolder":"migration"
+    }
+  }
+});
+
+grunt.loadTasks("./node_modules/nil/tasks");
+````
+
 Be aware of
 ----------------
 
@@ -68,10 +88,7 @@ Missing parts
 
 At the moment it's a simple js file.
 * when using CLI interface, i'd like to be able to _save_ connection string, in a file or environnement in order to reuse it without typing it
-* I'd like to be able to call this from grunt
-* I want to make migration folder configurable
 * I want to make plugins out of this. the main will have the logic from executing files, the plugin will have the logic to create connection with given db.
-* I want all file path used to converted to use path module
 
 Thanks
 -----------
