@@ -1,6 +1,6 @@
 {
-  "name": "nil",
-  "version": "0.0.1",
+  "name": "node-migration-tool",
+  "version": "0.0.3",
   "description": "NIL: Node mIgration Tool",
   "main": "lib/nil.js",
   "bin": {
