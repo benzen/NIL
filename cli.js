@@ -22,7 +22,7 @@ program
   .usage("<command> [options]")
   .option("-c, --connection-string <connectionString>","Define a connection string")
   .option("-f, --migration-folder <migrationFolder>","Define folder where migration scripts are. Default to 'migration'", "migration")
-  .option("-t, --migration-table <migrationTable>","Define table use to keep tracks of migrations script executed. Default to 'schema_migration'", "schema_migration")
+  .option("-t, --migration-table <migrationTable>","Define table use to keep tracks of migrations script executed. Default to 'schema_migrations'", "schema_migrations")
 
 program.command("init")
       .description("Create the schema migration table on table. It's safe to run it multiple time, old version won't be altered.")
