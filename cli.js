@@ -21,7 +21,8 @@ program
   .version("0.0.1")
   .usage("<command> [options]")
   .option("-c, --connection-string <connectionString>","Define a connection string")
-  .option("-m, --migration-folder <migrationFolder>","Define folder where to migration script are. Default to 'migration'", "migration")
+  .option("-f, --migration-folder <migrationFolder>","Define folder where migration scripts are. Default to 'migration'", "migration")
+  .option("-t, --migration-table <migrationTable>","Define table use to keep tracks of migrations script executed. Default to 'schema_migration'", "schema_migration")
 
 program.command("init")
       .description("Create the schema migration table on table. It's safe to run it multiple time, old version won't be altered.")

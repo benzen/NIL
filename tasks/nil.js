@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       done(false);
       return;
     };
-    var args = [this.options().connectionString, this.options().migrationFolder, upDownScript, function(err, de){ done(err) } ];
+    var args = [this.options().connectionString, this.options().migrationFolder, this.options().migrationTable, upDownScript, function(err, de){ done(err) } ];
     if(!_.contains(["create", "init", "up", "down"], operation)){
       var msg = "Unsupported operation"
       grunt.log.error(msg);

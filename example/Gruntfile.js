@@ -6,7 +6,8 @@ module.exports = function(grunt) {
     "nil":{
       "options":{
         "connectionString":"postgres://postgres:postgres@localhost/pyramide",
-        "migrationFolder":"migration"
+        "migrationFolder":"migration",
+        "migrationTable":"schema_migrations"
       }
     }
   });
