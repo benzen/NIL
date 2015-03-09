@@ -97,7 +97,6 @@ Missing parts
 -----------------
 
 At the moment it's a simple js file.
-* when using CLI interface, i'd like to be able to _save_ connection string, in a file or environnement in order to reuse it without typing it
 * I want to make plugins out of this. the main will have the logic from executing files, the plugin will have the logic to create connection with given db.
 
 Thanks
