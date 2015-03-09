@@ -77,6 +77,16 @@ grunt.initConfig({
 grunt.loadTasks("./node_modules/nil/tasks");
 ````
 
+Then in your shell you will use it like this
+
+````shell
+grunt nil:init                   # basic env setup
+grunt nil:create:<nameOfMyTable> # create new migration script
+grunt nil:up                     # run all up scripts
+grunt nil:down                   # run all down script
+
+````
+
 Be aware of
 ----------------
 
